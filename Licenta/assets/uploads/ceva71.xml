@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+	<question>
+		<text> Cred ca unii elevi devin agresivi deoarece vor sa se dea mari in fata propriilor prieteni </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> A umili un coleg nu este ceva atat de condamnabil </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Atingerile sexuale intre colegi nu ar trebui sa ofenseze pe nimeni </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Ca sa te faci remarcat trebuie sa te impui cu pumnul in fata celorlalti </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Cand cineva te tradeaza intr-o prietenie mi se pare firesc sa-i strici apoi imaginea in ochii colegilor </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Colegii care spun profesorilor ce se intampla in clasa trebuie aspru pedepsiti de catre ceilalti </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Copiii de bani gata merita s-o incaseze de la unii colegi </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Elevii violenti nu au parinti autoritari </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Cred ca nu este atat de grav ca un elev sa fie lovit de altul </text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text> Cand cineva te calca pe nervi mi se pare normal sa-i scapi o injuratura</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Daca cineva este enervant cred ca trebuie marginalizat</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Unii colegi au o fata care cere pumni</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Daca din cauza nervilor cineva strica lucrurile unui coleg nu este grav</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Despre unii merita sa barfesti</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Din cand in cand unora trebuie sa li se arate cine este cel mai puternic din clasa</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Elevii mai pirpirii, mai putin dezvoltati, trebuie sa se supuna vointei celor mai puternici</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Este distractiv sa vezi un elev cum este sacait de colegi</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Unii se bat in clasa pentru ca asa au vazut la ei in familie</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Este firesc ca din cand in cand fetele sa se mai traga de par</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Intimidarea unui coleg este uneori necesara</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Ironia mi se pare o modalitate inteligenta pentru a-i face pe unii sa se simta inferiori</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Intre colegi, poreclirea este acceptabila</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Lipsa educatiei de acasa este una dintre cele mai importante cauze ale violentei scolare</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Cred ca cei din scoala care nu prea au bani ar putea sa mai ceara de la altii care au prea multi</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Daca cineva merita este normal sa lansezi un zvon rautacios la adresa lui</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Mi se pare amuzant sa faci o farsa unui coleg de care apoi sa rada toti</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Unii colegi merita sa li se aplice de catre altii o pedeapsa corporala</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Mi se pare normal ca elevii mai putin dezvoltati fizic sa solicite protectie</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Nu este chiar atat de grav daca se intampla sa jignesti pe cineva</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Sunt colegi care merita scuipati in fata pentru prostia lor</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Unii colegi sunt enervanti pentru ca sunt tocilari si iau note bune</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Nu este grav sa furi de la un coleg care are mai mult decat tine</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Pe unii colegi trebuie sa-i tii la distanta</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Profesorii sunt responsabili pentru actele de violenta scolara deoarece sunt prea ingaduitori</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Sunt colegi care enerveaza prin felul lor de a se imbraca</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Unii au tendinta de lovi pe altii pentru ca s-au nascut cu un astfel de impuls puternic</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Unor colegi merita sa le arati tot dispretul de care esti in stare</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+	<question>
+		<text>Violenta de la tv influenteaza comportamentul de la scoala al elevilor</text> 
+		<answer>Acord total</answer>
+		<answer>Mai degraba in acord</answer>
+		<answer>Mai degraba in dezacord</answer>
+		<answer>Dezacord</answer>
+	</question>
+</test>

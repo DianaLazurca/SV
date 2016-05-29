@@ -1,0 +1,806 @@
+{ 
+"test-id" : 2,
+"category" : "category Y",
+"date" : 1434442617290,
+"creator" : "prof",
+"text" : "ceva68",
+"questions" : [ { 
+"question-id" : 0, 
+"text" : " Cred ca unii elevi devin agresivi deoarece vor sa se dea mari in fata propriilor prieteni ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 1, 
+"text" : " A umili un coleg nu este ceva atat de condamnabil ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 2, 
+"text" : " Atingerile sexuale intre colegi nu ar trebui sa ofenseze pe nimeni ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 3, 
+"text" : " Ca sa te faci remarcat trebuie sa te impui cu pumnul in fata celorlalti ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 4, 
+"text" : " Cand cineva te tradeaza intr-o prietenie mi se pare firesc sa-i strici apoi imaginea in ochii colegilor ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 5, 
+"text" : " Colegii care spun profesorilor ce se intampla in clasa trebuie aspru pedepsiti de catre ceilalti ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 6, 
+"text" : " Copiii de bani gata merita s-o incaseze de la unii colegi ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 7, 
+"text" : " Elevii violenti nu au parinti autoritari ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 8, 
+"text" : " Cred ca nu este atat de grav ca un elev sa fie lovit de altul ", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 9, 
+"text" : " Cand cineva te calca pe nervi mi se pare normal sa-i scapi o injuratura", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 10, 
+"text" : "Daca cineva este enervant cred ca trebuie marginalizat", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 11, 
+"text" : "Unii colegi au o fata care cere pumni", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 12, 
+"text" : "Daca din cauza nervilor cineva strica lucrurile unui coleg nu este grav", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 13, 
+"text" : "Despre unii merita sa barfesti", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 14, 
+"text" : "Din cand in cand unora trebuie sa li se arate cine este cel mai puternic din clasa", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 15, 
+"text" : "Elevii mai pirpirii, mai putin dezvoltati, trebuie sa se supuna vointei celor mai puternici", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 16, 
+"text" : "Este distractiv sa vezi un elev cum este sacait de colegi", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 17, 
+"text" : "Unii se bat in clasa pentru ca asa au vazut la ei in familie", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 18, 
+"text" : "Este firesc ca din cand in cand fetele sa se mai traga de par", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 19, 
+"text" : "Intimidarea unui coleg este uneori necesara", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 20, 
+"text" : "Ironia mi se pare o modalitate inteligenta pentru a-i face pe unii sa se simta inferiori", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 21, 
+"text" : "Intre colegi, poreclirea este acceptabila", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 22, 
+"text" : "Lipsa educatiei de acasa este una dintre cele mai importante cauze ale violentei scolare", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 23, 
+"text" : "Cred ca cei din scoala care nu prea au bani ar putea sa mai ceara de la altii care au prea multi", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 24, 
+"text" : "Daca cineva merita este normal sa lansezi un zvon rautacios la adresa lui", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 25, 
+"text" : "Mi se pare amuzant sa faci o farsa unui coleg de care apoi sa rada toti", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 26, 
+"text" : "Unii colegi merita sa li se aplice de catre altii o pedeapsa corporala", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 27, 
+"text" : "Mi se pare normal ca elevii mai putin dezvoltati fizic sa solicite protectie", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 28, 
+"text" : "Nu este chiar atat de grav daca se intampla sa jignesti pe cineva", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 29, 
+"text" : "Sunt colegi care merita scuipati in fata pentru prostia lor", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 30, 
+"text" : "Unii colegi sunt enervanti pentru ca sunt tocilari si iau note bune", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 31, 
+"text" : "Nu este grav sa furi de la un coleg care are mai mult decat tine", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 32, 
+"text" : "Pe unii colegi trebuie sa-i tii la distanta", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 33, 
+"text" : "Profesorii sunt responsabili pentru actele de violenta scolara deoarece sunt prea ingaduitori", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 34, 
+"text" : "Sunt colegi care enerveaza prin felul lor de a se imbraca", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 35, 
+"text" : "Unii au tendinta de lovi pe altii pentru ca s-au nascut cu un astfel de impuls puternic", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 36, 
+"text" : "Unor colegi merita sa le arati tot dispretul de care esti in stare", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}, { 
+"question-id" : 37, 
+"text" : "Violenta de la tv influenteaza comportamentul de la scoala al elevilor", 
+"images" : [] , 
+"answers" : [ { 
+"answer-id" : 0, 
+"text" : "Acord total", 
+"images" : [] 
+}, { 
+"answer-id" : 1, 
+"text" : "Mai degraba in acord", 
+"images" : [] 
+}, { 
+"answer-id" : 2, 
+"text" : "Mai degraba in dezacord", 
+"images" : [] 
+}, { 
+"answer-id" : 3, 
+"text" : "Dezacord", 
+"images" : [] 
+} 
+]}
+]}

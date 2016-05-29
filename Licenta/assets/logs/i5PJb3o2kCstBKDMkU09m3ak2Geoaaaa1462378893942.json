@@ -1,0 +1,23 @@
+{ 
+"test-id" : 43,
+"start-date" : 1462378893942,
+"finish-time" : 19273,
+"questions" : 
+[{ "question-id" : 1,  "text" : "Cred ca unii elevi devin agresivi deoarece vor sa se dea mari in fata propriilor prieteni.", 
+"answered-time" : 11025, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : ""},
+{ "answer-id" : 2, "text" : ""},
+{ "answer-id" : 3, "text" : ""}]},
+{ "question-id" : 2,  "text" : "A umili un coleg nu este ceva atat de condamnabil.Nu bla bla bla bla bla bla lba bla bla.
+Hulalalalalala
+", 
+"answered-time" : 5486, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Mai degraba in dezacord"},
+{ "answer-id" : 2, "text" : "Mai degraba in acord"},
+{ "answer-id" : 1, "text" : "Acord total
+Lalalalalalalala
+"}]}
+]
+}

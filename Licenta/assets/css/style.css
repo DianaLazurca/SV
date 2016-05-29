@@ -1,0 +1,188 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+h3,p{
+	margin:2px;
+}
+
+h5{
+	margin:0 0 10px 0;
+	color:#999;
+}
+
+/**BOX SIZE**/
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+ }
+
+
+ #wrapper {
+ 	width:70%;
+ 	border: 2px solid #CCCDBE;
+ 	margin:0 auto;
+ }
+
+ #header {
+ 	border: 2px solid #ACCDBE;
+ }
+
+ #footer {
+
+ 	bottom: 0;
+ 	width:100%;
+ 	height:70px;
+ 	border: 2px solid #ACCDBE;
+ }
+
+  #sidebar {
+
+ 	float:left;
+ 	width:22%;
+
+ }
+
+ #contentWrap {
+ 	width:60%;
+ 	padding:20px;
+ 	min-height: 300px;
+ 	margin-left: 2%;
+ 	border: 2px solid #AC0DBE;
+ 	display: inline-block;
+ }
+
+ .timestamp {
+ 	font-size: 12px;
+ 	float:right;
+ 	color:#BBB;
+ }
+
+ .timestamp:before {
+ 	content:"Posted on: ";
+ }
+
+ .commentsNumber {
+ 	font-size: 12px;
+ 	float:left;
+ 	color:#BBB;
+ }
+
+
+ #conversation ul li{
+ 	border:20px solid #00ABCD;
+ 	-webkit-animation: fade-in 1.5s;
+ 	-moz-animation: fade-in 1.5s;
+ 	-o-animation: fade-in 1.5s;
+ 	animation: fade-in 1.5s;
+ }
+
+ #conversation ul li:not(:first-child) {
+ 	margin-top: 5px;
+ }
+
+ @-webkit-keyframes fade-in {
+ 	0% { opacity: 0.2;}
+ 	100% {opacity: 1.0;}
+ }
+
+ @-moz-keyframes fade-in {
+ 	0% { opacity: 0.3;}
+ 	100% {opacity: 1.0;}
+ }
+
+ @-o-keyframes fade-in {
+ 	0% { opacity: 0.3;}
+ 	100% {opacity: 1.0;}
+ }
+
+ @keyframes fade-in {
+ 	0% { opacity: 0.3;}
+ 	100% {opacity: 1.0;}
+ }
+
+ #sidebar ul li{
+ 	padding:10px;
+ 	text-align: center;
+ 	border: 1px solid #DDDDDD;
+
+ }
+
+ #sidebar ul li:hover{
+ 	border: 2px solid #000;
+ 	background-color: #96B1D2;
+
+ }
+
+ #postContent {
+ 	border:2px solid #DDDDDD;
+ 	border-style:outset;
+ 	border-radius: 5px;
+ 	min-height: 50px;
+ 	margin-left:20px;
+ 	padding:10px;
+ }
+
+ .comment {
+ 	margin-bottom:20px;
+ 	padding:10px;
+ 	border: 2px solid #555666;
+ }
+
+ .comment p {
+ 	margin-left:10px;
+ }
+
+ #commentsWrapper {
+ 	border:2px solid #DDDDDD;
+ 	border-style: groove;
+ 	margin-bottom: 20px;
+ 	padding:5px 20px  0 20px;
+ }
+

@@ -1,0 +1,162 @@
+{ 
+"test-id" : 8,
+"start-date" : 1434553205430,
+"finish-time" : 86215,
+"questions" : 
+[{ "question-id" : 0,  "text" : " Cred ca unii elevi devin agresivi deoarece vor sa se dea mari in fata propriilor prieteni ", 
+"answered-time" : 4317, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 1,  "text" : " A umili un coleg nu este ceva atat de condamnabil ", 
+"answered-time" : 2536, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 2,  "text" : " Atingerile sexuale intre colegi nu ar trebui sa ofenseze pe nimeni ", 
+"answered-time" : 4501, 
+ "answers" : [ 
+{ "answer-id" : 0, "text" : "Acord total"},
+{ "answer-id" : 1, "text" : "Mai degraba in acord"},
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 3,  "text" : " Ca sa te faci remarcat trebuie sa te impui cu pumnul in fata celorlalti ", 
+"answered-time" : 1899, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 4,  "text" : " Cand cineva te tradeaza intr-o prietenie mi se pare firesc sa-i strici apoi imaginea in ochii colegilor ", 
+"answered-time" : 2647, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 5,  "text" : " Colegii care spun profesorilor ce se intampla in clasa trebuie aspru pedepsiti de catre ceilalti ", 
+"answered-time" : 2078, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 6,  "text" : " Copiii de bani gata merita s-o incaseze de la unii colegi ", 
+"answered-time" : 1909, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 7,  "text" : " Elevii violenti nu au parinti autoritari ", 
+"answered-time" : 1745, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"}]},
+{ "question-id" : 8,  "text" : " Cred ca nu este atat de grav ca un elev sa fie lovit de altul ", 
+"answered-time" : 1911, 
+ "answers" : [ 
+{ "answer-id" : 0, "text" : "Acord total"}]},
+{ "question-id" : 9,  "text" : " Cand cineva te calca pe nervi mi se pare normal sa-i scapi o injuratura", 
+"answered-time" : 1864, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 10,  "text" : "Daca cineva este enervant cred ca trebuie marginalizat", 
+"answered-time" : 1779, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 11,  "text" : "Unii colegi au o fata care cere pumni", 
+"answered-time" : 2510, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 12,  "text" : "Daca din cauza nervilor cineva strica lucrurile unui coleg nu este grav", 
+"answered-time" : 2832, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 13,  "text" : "Despre unii merita sa barfesti", 
+"answered-time" : 2010, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"}]},
+{ "question-id" : 14,  "text" : "Din cand in cand unora trebuie sa li se arate cine este cel mai puternic din clasa", 
+"answered-time" : 2302, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 15,  "text" : "Elevii mai pirpirii, mai putin dezvoltati, trebuie sa se supuna vointei celor mai puternici", 
+"answered-time" : 1914, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 16,  "text" : "Este distractiv sa vezi un elev cum este sacait de colegi", 
+"answered-time" : 2539, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 17,  "text" : "Unii se bat in clasa pentru ca asa au vazut la ei in familie", 
+"answered-time" : 2482, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"}]},
+{ "question-id" : 18,  "text" : "Este firesc ca din cand in cand fetele sa se mai traga de par", 
+"answered-time" : 1989, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 19,  "text" : "Intimidarea unui coleg este uneori necesara", 
+"answered-time" : 2155, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 20,  "text" : "Ironia mi se pare o modalitate inteligenta pentru a-i face pe unii sa se simta inferiori", 
+"answered-time" : 1936, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"}]},
+{ "question-id" : 21,  "text" : "Intre colegi, poreclirea este acceptabila", 
+"answered-time" : 1949, 
+ "answers" : [ 
+{ "answer-id" : 0, "text" : "Acord total"}]},
+{ "question-id" : 22,  "text" : "Lipsa educatiei de acasa este una dintre cele mai importante cauze ale violentei scolare", 
+"answered-time" : 1816, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 23,  "text" : "Cred ca cei din scoala care nu prea au bani ar putea sa mai ceara de la altii care au prea multi", 
+"answered-time" : 1979, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 24,  "text" : "Daca cineva merita este normal sa lansezi un zvon rautacios la adresa lui", 
+"answered-time" : 2085, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 25,  "text" : "Mi se pare amuzant sa faci o farsa unui coleg de care apoi sa rada toti", 
+"answered-time" : 2158, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 26,  "text" : "Unii colegi merita sa li se aplice de catre altii o pedeapsa corporala", 
+"answered-time" : 2524, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"},
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 27,  "text" : "Mi se pare normal ca elevii mai putin dezvoltati fizic sa solicite protectie", 
+"answered-time" : 1735, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"}]},
+{ "question-id" : 28,  "text" : "Nu este chiar atat de grav daca se intampla sa jignesti pe cineva", 
+"answered-time" : 2029, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 29,  "text" : "Sunt colegi care merita scuipati in fata pentru prostia lor", 
+"answered-time" : 1822, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 30,  "text" : "Unii colegi sunt enervanti pentru ca sunt tocilari si iau note bune", 
+"answered-time" : 1912, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 31,  "text" : "Nu este grav sa furi de la un coleg care are mai mult decat tine", 
+"answered-time" : 1746, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Dezacord"}]},
+{ "question-id" : 32,  "text" : "Pe unii colegi trebuie sa-i tii la distanta", 
+"answered-time" : 1831, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 33,  "text" : "Profesorii sunt responsabili pentru actele de violenta scolara deoarece sunt prea ingaduitori", 
+"answered-time" : 2003, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"}]},
+{ "question-id" : 34,  "text" : "Sunt colegi care enerveaza prin felul lor de a se imbraca", 
+"answered-time" : 1896, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 35,  "text" : "Unii au tendinta de lovi pe altii pentru ca s-au nascut cu un astfel de impuls puternic", 
+"answered-time" : 2443, 
+ "answers" : [ 
+{ "answer-id" : 1, "text" : "Mai degraba in acord"}]},
+{ "question-id" : 36,  "text" : "Unor colegi merita sa le arati tot dispretul de care esti in stare", 
+"answered-time" : 2491, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]},
+{ "question-id" : 37,  "text" : "Violenta de la tv influenteaza comportamentul de la scoala al elevilor", 
+"answered-time" : 3790, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "Mai degraba in dezacord"}]}
+]
+}

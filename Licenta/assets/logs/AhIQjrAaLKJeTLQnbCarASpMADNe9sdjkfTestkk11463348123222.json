@@ -1,0 +1,23 @@
+{ 
+"test-id" : 45,
+"start-date" : 1463348123222,
+"finish-time" : 214342,
+"questions" : 
+[{ "question-id" : 1,  "text" : "Cred ca unii elevi devin agresivi deoarece vor sa se dea mari in fata propriilor prieteni.", 
+"answered-time" : 203524, 
+ "answers" : [ 
+{ "answer-id" : 2, "text" : "", "img" : "http://localhost:8080/Licenta/assets/uploads/prof/Testkk1/Picture2.jpeg"},
+{ "answer-id" : 1, "text" : "", "img" : "http://localhost:8080/Licenta/assets/uploads/prof/Testkk1/Picture1.png"},
+{ "answer-id" : 3, "text" : "", "img" : "http://localhost:8080/Licenta/assets/uploads/prof/Testkk1/Picture3.jpeg"},
+{ "answer-id" : 2, "text" : "", "img" : "http://localhost:8080/Licenta/assets/uploads/prof/Testkk1/Picture2.jpeg"},
+{ "answer-id" : 3, "text" : "", "img" : "http://localhost:8080/Licenta/assets/uploads/prof/Testkk1/Picture3.jpeg"},
+{ "answer-id" : 1, "text" : "", "img" : "http://localhost:8080/Licenta/assets/uploads/prof/Testkk1/Picture1.png"},
+{ "answer-id" : 2, "text" : "", "img" : "http://localhost:8080/Licenta/assets/uploads/prof/Testkk1/Picture2.jpeg"}]},
+{ "question-id" : 2,  "text" : "A umili un coleg nu este ceva atat de condamnabil.Nu bla bla bla bla bla bla lba bla bla. Hulalalalalala ", 
+"answered-time" : 5012, 
+ "answers" : [ 
+{ "answer-id" : 3, "text" : "Mai degraba in dezacord", "img" : ""},
+{ "answer-id" : 1, "text" : "Acord total Lalalalalalalala ", "img" : ""},
+{ "answer-id" : 4, "text" : "Dezacord", "img" : ""}]}
+]
+}
