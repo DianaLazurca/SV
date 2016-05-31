@@ -16,8 +16,6 @@
       </div>
       <div class="modal-body">
       </div>
-      <div class="modal-legend">
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>

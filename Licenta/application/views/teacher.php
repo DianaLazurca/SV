@@ -37,7 +37,7 @@
   <input type="file" name="file"/>
   <input type="submit"  value="Upload">
 </form>  ng-controller="teacher"  -->
-<div class="container" ng-controller="teacher">
+<div class="container" ng-controller="teacher" ng-init="init()">
 
 <div style="margin-top: 20px;" class="panel panel-default" >
         <div class="panel-body">
@@ -88,14 +88,11 @@
                             </span>
                         </div> 
                     </div> -->
-                    <!-- #FF851B #5cb85c  #f9cb9c-->
-                    <div class="list-group" id="allTests" style="margin-top: 10px;">
-                         <a href="" class="list-group-item" style="background-color: #f9cb9c; border-color: #f9cb9c;">
-                              Test 1</a>
-                          <a href="#" class="list-group-item">Test 2</a>
-                          <a href="#" class="list-group-item">Test 3</a> 
-                    </div>
+                    <!-- #FF851B #5cb85c  #f9cb9c  style="background-color: #f9cb9c; border-color: #f9cb9c;"-->
 
+                    <div class="list-group" id="allTests" style="margin-top: 10px;" ng-model=allTests ng-repeat="test in allTests">
+                         <a href="" data-id="{{test.id}}"  style="margin-bottom: -18px;" class="list-group-item" ng-class="{active: $index == currentTestId}" ng-click=changeTest($index)>{{test.Name}}</a>
+                    </div>
                 </aside>
 
                 <article class="col-md-8">
@@ -119,25 +116,48 @@
                                 </span>
                             </div>
                         </div>-->
-                        <div class="list-group" style="margin-top: 10px;" id="allQuestions">
-                             <a class="list-group-item active"  data-toggle="collapse" data-target="answers"  ng-click="collapse()" area-controls="answers">
-                                  Subdomain 1<i class="glyphicon glyphicon-remove pull-right"></i><i style="margin-right: 5px;" class="glyphicon glyphicon-edit pull-right"></i>
-                              </a>
-                              <div class="navbar-collapse collapse" id="answers">
+                        <div class="list-group" style="margin-top: 10px;" id="allQuestions" ng-model=currentTest  ng-repeat="question in pagedItems[currentPage]">  
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <h4>{{question.question_id}}. {{question.text}}</h4>
+                                <div ng-repeat="answer in question.answers">
+                                   <li>
+                                      <img style="height: 120px; width: 200px; margin-bottom: 10px;" ng-if="answer.isImage == true" src="{{answer.image}}">
+                                      <span ng-if="answer.isImage == false">{{answer.text}}</span>
+                                   </li>
+                                </div>
+                               </div> 
+                            </div>  
+                        </div>                        
+                            <!-- <a class="list-group-item">
+                             
+                             </div>
+                             </a>
+                              <div class="navbar-collapse collapse" id="answers" ng-if="question.">
                                   Bla bla bvla
                                </div>
-                              <a href="#" class="list-group-item">
+                              <!--<a href="#" class="list-group-item">
                                   Subdomain 2<i class="glyphicon glyphicon-remove pull-right"></i><i style="margin-right: 5px;" class="glyphicon glyphicon-edit pull-right"></i>
                               </a>
                               <a href="#" class="list-group-item">
                                   Subdomain 3<i class="glyphicon glyphicon-remove pull-right"></i><i style="margin-right: 5px;" class="glyphicon glyphicon-edit pull-right"></i>
-                              </a>
+                              </a>-->
                                 
-                        </div>
-
-                              
-                        
-
+                          <div>
+                              <ul class="pagination pull-right">
+                                  <li ng-class="{disabled: currentPage == 0}">
+                                      <a href ng-click="prevPage()">« Prev</a>
+                                  </li>
+                                  <li ng-repeat="n in range(pagedItems.length)"
+                                      ng-class="{active: n == currentPage}"
+                                  ng-click="setPage()">
+                                      <a href ng-bind="n + 1">1</a>
+                                  </li>
+                                  <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                      <a href ng-click="nextPage()">Next»</a>
+                                  </li>
+                              </ul>
+                          </div>
                     </aside>
 
                 </article>
@@ -261,9 +281,9 @@ ALa buun
 </span>-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css");?>/jquery.dataTables.min.css">
 <script type="text/javascript" src="<?php echo base_url("assets/js");?>/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css");?>/teacher.css"><!--
-<script type="text/javascript" src="<?php echo base_url("assets/js/angular");?>/app.js"></script> 
-<script type="text/javascript" src="<?php echo base_url("assets/js/angular");?>/teacherController.js"></script> -->
+<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css");?>/teacher.css">
+<!--<script type="text/javascript" src="<?php echo base_url("assets/js/angular");?>/app.js"></script> -->
+<script type="text/javascript" src="<?php echo base_url("assets/js/angular");?>/teacherController.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css");?>/fileImport.css">
 <script type="text/javascript" src="<?php echo base_url("/assets/js")?>/teacher-js.js"></script>
 	
