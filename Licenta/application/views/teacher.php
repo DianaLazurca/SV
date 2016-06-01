@@ -90,7 +90,7 @@
                     </div> -->
                     <!-- #FF851B #5cb85c  #f9cb9c  style="background-color: #f9cb9c; border-color: #f9cb9c;"-->
 
-                    <div class="list-group" id="allTests" style="margin-top: 10px;" ng-model=allTests ng-repeat="test in allTests">
+                    <div class="list-group" id="allTests" style="margin-top: 10px;"  ng-repeat="test in allTests">
                          <a href="" data-id="{{test.id}}"  style="margin-bottom: -18px;" class="list-group-item" ng-class="{active: $index == currentTestId}" ng-click=changeTest($index)>{{test.Name}}</a>
                     </div>
                 </aside>
@@ -116,7 +116,7 @@
                                 </span>
                             </div>
                         </div>-->
-                        <div class="list-group" style="margin-top: 10px;" id="allQuestions" ng-model=currentTest  ng-repeat="question in pagedItems[currentPage]">  
+                        <div class="list-group" style="margin-top: 10px;" id="allQuestions"   ng-repeat="question in pagedItems[currentPage]">  
                             <div class="panel panel-default">
                               <div class="panel-body">
                                 <h4>{{question.question_id}}. {{question.text}}</h4>

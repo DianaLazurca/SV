@@ -4,5 +4,6 @@
 				$routeProvider.
 					when('/', {templateUrl: 'Licenta', controller: "header"}).
 					when('/teacher', {templateUrl: 'Licenta/teacher.php', controller: "teacher"}).
-					when('/login', {templateUrl: 'Licenta/login.php', controller: "login"})
+					when('/login', {templateUrl: 'Licenta/login.php', controller: "login"}).
+					when('/student', {templateUrl: 'Licenta/student', controller: "student"})
 			}]);

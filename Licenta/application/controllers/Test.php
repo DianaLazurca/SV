@@ -17,8 +17,8 @@ Class Test extends CI_Controller {
 		if ($user) {
 			$this->load->model('get');
 			$data["test"] = $this->get->getTestById($id)["Location"];
-
-			$this->load->view('test', $data);
+			echo $id;
+			//$this->load->view('test', $data);
 		}
 	}
 

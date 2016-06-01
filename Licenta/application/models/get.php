@@ -84,8 +84,8 @@ class Get extends CI_Model {
 		$result = $this->db->get("tests");
 
 		if ($result->num_rows() > 0) { 
-				$result = $result->result_array();				
-				return $result[0];
+			$result = $result->result_array();				
+			return $result[0];
 		} else {
 			return $result =  array('location' => 'invalid');
 		}
