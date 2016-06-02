@@ -6,16 +6,16 @@
 
 
 <div class="container" ng-controller="student">
-	<div class="panel panel-default" style = "margin:0 auto;">
+	<div class="panel panel-default" style="margin:0 auto;">
 		<div style="margin-top: 25px; margin-left: 30px;">
 			<img  ng-if="isStarted == false" src="<?php echo base_url() ?>assets/images/questionnaire_icon.gif" alt="No image found">
 		</div>		
 		<div>
-			<u><h2 style="text-align : center; margin-bottom: 30px"> Questionnaire about school violence </h2></u>
+			<u><h2 ng-if="isFinished == false" style="text-align : center; margin-bottom: 30px"> Questionnaire about school violence </h2></u>
 			<!--<u><h2 ng-if="isStarted == true" style="text-align : center; margin-bottom: 30px"> {{currentTest.title}}</h2></u>-->
 		</div>
-		<div class="panel-body">
-			<div ng-if="isStarted == false">
+		<div class="panel-body">			
+			<div ng-if="isStarted == false && isFinished == false">
 				<ul style="margin-left: 10%;">
 					<li><h4>In the next minutes you will read some questions about violence in school.</h4></li>
 					<li><h4>Choose the answer that fits you best.</h4></li>
@@ -29,28 +29,33 @@
 					<input type="button" class="btn btn-primary btn-lg" ng-click="startTest($this)" id="startTest" value=" Start Test " data-id="<?php echo $user['testID'] ?>" />
 				</div>
 			</div>
-			<div ng-if="isStarted == true" class="row">
-				<aside class="col-md-4">
-					<div class="list-group" style="margin-top: 10px;"  ng-repeat="question in currentTest.questions">
-	                    <a href="" data-id="{{question.question_id}}"  style="margin-bottom: -18px;" class="list-group-item" ng-class="{active: $index == currentQuestionId}" ng-click=changeQuestion($index)>{{question.question_id}}. {{question.text}}</a>
+			<div ng-if="isStarted == true && isFinished == false" class="row">
+				<aside class="col-md-4" ng-if="isStarted == true && isFinished == false">
+					<div class="list-group" style="margin-top: 10px;"  ng-repeat="question in currentTest.questions" ng-if="isStarted == true && isFinished == false">
+	                    <a ng-if="isStarted == true && isFinished == false" href="" data-id="{{question.question_id}}"  style="margin-bottom: -18px;" class="list-group-item" ng-class="{active: $index == currentQuestionId, disabled: enabledQuestionsList[$index] == false}" ng-bind="questionText" ng-click=changeQuestion($index)></a>
 	                </div>
                 </aside>
-                <aside class="col-md-8">
-                	<div>
-						<h4 style="margin-left:3%; margin-right: 3%">{{currentQuestion.question_id}}. {{currentQuestion.text}}</h4>
+                <aside class="col-md-8" ng-if="isStarted == true && isFinished == false">
+                	<div ng-if="isStarted == true && isFinished == false">
+						<h4 style="margin-left:3%; margin-right: 3%" ng-if="isStarted == true && isFinished == false" ng-bind="questionText"></h4>
 					</div>
-					<div  id="allAnswers" ng-repeat="answer in currentQuestion.answers"> 
-	                      <input style="margin-left: 5%;"  name="answers" type="radio" data-id="answer.answer_id" ng-model="answer.answer_id" value="answer.text">
+					<div  id="allAnswers" ng-repeat="answer in currentQuestion.answers" ng-if="isStarted == true && isFinished == false"> 
+	                      <input style="margin-left: 5%;"  name="answers" type="radio" ng-click="pickAnswer($index)" data-id="answer.answer_id" ng-model="answer.answer_id" value="answer.text">
 	                      <span style="margin-bottom: 10px;" ng-if="answer.isImage==false">{{answer.text}}</span>
 	                      <img ng-if="answer.isImage==true" src="{{answer.image}}" style="height: 120px; width: 200px; margin-bottom: 10px;">
 	                </div>
-	                <div class="row">
-	                	<button  class="btn btn-success" ng-class="{disable: currentQuestionId == 0}" style="margin-bottom : 20px; margin-left: 15px; margin-top:20px;" ng-click="prev()">Previous Question</button>
+	                <div class="row" ng-if="isStarted == true && isFinished == false">
+	                	<button  class="btn btn-success" ng-class="{disabled: currentQuestionId == 0 || checkIfAnAnswerIsSelected()==false }" style="margin-bottom : 20px; margin-left: 15px; margin-top:20px;" ng-click="prev()">Previous Question</button>
 	                	
-	                	<button ng-if="isLastQuestion==true" class="btn btn-success" style="margin-bottom : 20px; float: right;margin-right:15px; margin-top:20px;" id="finishTest">Finish Test</button>
-	                	<button ng-if="isLastQuestion==false" class="btn btn-success" style="margin-bottom : 20px; float: right; margin-right:15px; margin-top:20px;" id="nextQuestion" ng-click="next()">Next Question</button>
+	                	<button ng-if="isLastQuestion==true" ng-class="{disabled: checkIfAnAnswerIsSelected()==false}" class="btn btn-success" style="margin-bottom : 20px; float: right;margin-right:15px; margin-top:20px;" id="finishTest"ng-click="finish()">Finish Test</button>
+	                	<button ng-if="isLastQuestion==false" class="btn btn-success" style="margin-bottom : 20px; float: right; margin-right:15px; margin-top:20px;" id="nextQuestion" ng-class="{disabled: checkIfAnAnswerIsSelected()==false}" ng-click="next()">Next Question</button>
 	                </div>
                 </aside>
+			</div>
+			<div ng-if="isStarted == false && isFinished == true">
+				<u><h1 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;"> Congratulations! </h1></u>
+				<h4 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;">You have finished this questionnaire in X </h4>
+				<button  class="btn btn-success btn-lg center-block" ng-click="resume()">Resume</button>
 			</div>
 		</div>
 	</div>
@@ -88,6 +93,53 @@
 		<?php } ?>
 	</div> <!--CONTENT 
 	</div>-->
+	<button type="button" style="display: none;" id="alertModalButton" data-toggle="modal" data-target="#alertModal"></button>
+	<div class="modal fade" id="alertModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-body">
+	          <h4 style="margin-left: 20px;" id="alertModalMessage"></h4>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+    </div>
+
+    <button type="button" style="display: none;" class="btn btn-info btn-lg" id="confirmModalButton" data-toggle="modal" data-target="#confirmModal"></button>
+	<div id="confirmModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <h4 style="margin-left: 20px;" id="confirmModalMessage"></h4>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        <button type="button" class="btn btn-success" ng-click="confirmSubmission()" data-dismiss="modal">Confirm</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+	<button type="button" style="display: none;" class="btn btn-info btn-lg" id="resumeModalButton" data-toggle="modal" data-target="#resumeModal"></button>
+	<div id="resumeModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <h4 style="margin-left: 20px;" id="resumeModalMessage">aicisa va fi rezumatul chestionarului (poate fi folosita ca parte comuna pentru prof + student)</h4>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
 
 <script type="text/javascript" src="<?php echo base_url('assets/js')?>/jquery-2.0.1.min.js"></script>
 <script src="<?php echo base_url("assets/js");?>/bootstrap.min.js"></script>

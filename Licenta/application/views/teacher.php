@@ -39,7 +39,7 @@
 </form>  ng-controller="teacher"  -->
 <div class="container" ng-controller="teacher" ng-init="init()">
 
-<div style="margin-top: 20px;" class="panel panel-default" >
+<div style="margin-top: 20px; height:80%;" class="panel panel-default" >
         <div class="panel-body">
             <div class="row">
                 <aside class="col-md-4">
