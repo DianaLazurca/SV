@@ -39,11 +39,10 @@
 </form>  ng-controller="teacher"  -->
 <div class="container" ng-controller="teacher" ng-init="init()">
 
-<div style="margin-top: 20px; height:80%;" class="panel panel-default" >
+    <div style="margin-top: 20px; height:80%;" class="panel panel-default" >
         <div class="panel-body">
             <div class="row">
                 <aside class="col-md-4">
-
                     <ul class="nav nav-tabs" style="margin-top: 10px;">
                             <li class="active"><a href="#">My tests</a></li>
                             <li><a href="#">Other tests</a></li>
@@ -91,15 +90,16 @@
                     <!-- #FF851B #5cb85c  #f9cb9c  style="background-color: #f9cb9c; border-color: #f9cb9c;"-->
 
                     <div class="list-group" id="allTests" style="margin-top: 10px;"  ng-repeat="test in allTests">
-                         <a href="" data-id="{{test.id}}"  style="margin-bottom: -18px;" class="list-group-item" ng-class="{active: $index == currentTestId}" ng-click=changeTest($index)>{{test.Name}}</a>
+                         <a href="" data-id="{{test.id}}"  style="margin-bottom: -18px;" class="list-group-item" ng-class="{active: $index == currentTestId}" ng-click=changeTest($index)><i class="icon-chevron-right"></i>{{test.Name}}</a>
+
                     </div>
                 </aside>
 
                 <article class="col-md-8">
                     <aside>
                           <ul class="nav nav-tabs" style="margin-top: 10px;">
-                            <li class="active"><a href="#">Questions</a></li>
-                            <li><a href="#">Menu 1</a></li>
+                            <li ng-class="{active: isQuestionTab == true }"><a ng-click="changeTab(1)">Questions</a></li>
+                            <li ng-class="{active: isEvaluationTab == true}"><a ng-click="changeTab(2)">Evaluations</a></li>
                             <li><a href="#">Menu 2</a></li>
                             <li><a href="#">Menu 3</a></li>
                           </ul>
@@ -116,7 +116,7 @@
                                 </span>
                             </div>
                         </div>-->
-                        <div class="list-group" style="margin-top: 10px;" id="allQuestions"   ng-repeat="question in pagedItems[currentPage]">  
+                        <div ng-if="isQuestionTab == true" class="list-group" style="margin-top: 10px;" id="allQuestions"   ng-repeat="question in pagedItems[currentPage]">  
                             <div class="panel panel-default">
                               <div class="panel-body">
                                 <h4>{{question.question_id}}. {{question.text}}</h4>
@@ -128,7 +128,61 @@
                                 </div>
                                </div> 
                             </div>  
-                        </div>                        
+                        </div>  
+                        <div ng-if="isQuestionTab == true">
+                              <ul class="pagination pull-right">
+                                  <li ng-class="{disabled: currentPage == 0}">
+                                      <a href ng-click="prevPage()">« Prev</a>
+                                  </li>
+                                  <li ng-repeat="n in range(pagedItems.length)"
+                                      ng-class="{active: n == currentPage}"
+                                  ng-click="setPage()">
+                                      <a href ng-bind="n + 1">1</a>
+                                  </li>
+                                  <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                      <a href ng-click="nextPage()">Next»</a>
+                                  </li>
+                              </ul>
+                        </div>
+                        <div ng-if="isEvaluationTab == true" style="margin-top: 10px;" id="allEvaluations" ng-init="getEvals()">  
+                                <div class="table-responsive">
+                                  <table ng-if="evaluationArray.length != 0" class="table  table-hover">
+                                      <thead>
+                                        <tr style="text-align: center; color: #337ab7;">
+                                          <th style="width: 15%; text-align: center;">Date</th>
+                                          <th style="width: 25%; text-align: center;">Student</th>
+                                          <th style="width: 25%; text-align: center;">Manual Classification</th>
+                                          <th style="width: 25%; text-align: center;">Auto Classification</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr ng-repeat="evaluation in pagedEvals[currentPageEval] track by $index" style="text-align: center;" ng-click="evaluateStudent($index)">
+                                          <td>{{evaluation.date}}</td> 
+                                          <td>{{evaluation.username}}</td>
+                                          <td>{{evaluation.eval_man}}</td>
+                                          <td>{{evaluation.eval_aut}}</td>
+                                        </tr>                                     
+                                      </tbody>
+                                  </table>
+                                  <h3 ng-if="evaluationArray.length == 0">No student has answered to this questionnaire!</h3>
+                                </div> 
+
+                                <div ng-if="isEvaluationTab == true">
+                                    <ul class="pagination pull-right">
+                                        <li ng-class="{disabled: currentPageEval == 0}">
+                                            <a href ng-click="prevPageEval()">« Prev</a>
+                                        </li>
+                                        <li ng-repeat="n in range(pagedEvals.length)"
+                                            ng-class="{active: n == currentPageEval}"
+                                        ng-click="setPageEval()">
+                                            <a href ng-bind="n + 1">1</a>
+                                        </li>
+                                        <li ng-class="{disabled: currentPageEval == pagedEvals.length - 1}">
+                                            <a href ng-click="nextPageEval()">Next»</a>
+                                        </li>
+                                    </ul>
+                                </div> 
+                        </div>                       
                             <!-- <a class="list-group-item">
                              
                              </div>
@@ -143,21 +197,7 @@
                                   Subdomain 3<i class="glyphicon glyphicon-remove pull-right"></i><i style="margin-right: 5px;" class="glyphicon glyphicon-edit pull-right"></i>
                               </a>-->
                                 
-                          <div>
-                              <ul class="pagination pull-right">
-                                  <li ng-class="{disabled: currentPage == 0}">
-                                      <a href ng-click="prevPage()">« Prev</a>
-                                  </li>
-                                  <li ng-repeat="n in range(pagedItems.length)"
-                                      ng-class="{active: n == currentPage}"
-                                  ng-click="setPage()">
-                                      <a href ng-bind="n + 1">1</a>
-                                  </li>
-                                  <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
-                                      <a href ng-click="nextPage()">Next»</a>
-                                  </li>
-                              </ul>
-                          </div>
+                          
                     </aside>
 
                 </article>
@@ -185,7 +225,50 @@
         </div>
     </div>
 
+<button type="button" style="display: none;" class="btn btn-info btn-lg" id="evaluateModalButton" data-toggle="modal" data-target="#evaluateModal"></button>
+  <div id="evaluateModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <strong><h3 style="text-align: center">Evaluate {{currentLogToBeEvaluated.username}}</h3><strong>
+        </div>
+        <div class="modal-body">
+            <div style="margin-left: 20px; margin-top: 20px; margin-bottom: 20px;" ng-repeat="question in pagedLogEvals[currentPageLogEval]">
+              <h4>{{question['question-id']}}. {{question.text}} ({{time(question['answered-time'])}})</h4>
+                <div ng-repeat="answer in question.answers">
+                   
+                    <span ng-if="$index !=  question.answers.length - 1" class="glyphicon glyphicon-remove-circle" style="color: red; margin-left: 20px; width: 30px;"></span>
+                    <span ng-if="$index ==  question.answers.length - 1" class="glyphicon glyphicon-ok-circle" style="color: green; margin-left: 20px; width: 30px;"></span>
+                    <img style="height: 120px; width: 200px; margin-bottom: 10px;" ng-if="answer.img != '' " src="{{answer.img}}">
+                    <span ng-if="answer.img == '' ">{{answer.text}}</span>
+                   
+                </div>
+            </div>
+              <ul class="pagination" style="margin-left: 30%;">
+                  <li ng-class="{disabled: currentPageLogEval == 0}">
+                      <a href ng-click="prevPageLogEval()">« Prev</a>
+                  </li>
+                  <li ng-repeat="n in range(pagedLogEvals.length)"
+                      ng-class="{active: n == currentPageLogEval}"
+                  ng-click="setPageLogEval()">
+                      <a href ng-bind="n + 1">1</a>
+                  </li>
+                  <li ng-class="{disabled: currentPageLogEval == pagedLogEvals.length - 1}">
+                      <a href ng-click="nextPageLogEval()">Next»</a>
+                  </li>
+              </ul>
+        </div>
+        <div class="modal-footer">
+          <div class="row">            
+            <h4 style="text-align: left;" class="col-sm-3">Time: {{time(currentLogToBeEvaluatedJSON['finish-time'])}} </h4>
+            <button type="button" style="margin-right: 20px;" class="btn btn-success" ng-click="confirmSubmission()" data-dismiss="modal">Evaluate</button>
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </div>
 
 
 
@@ -234,6 +317,8 @@
 
     <h4>Unauthorized</h4>
     <?php } ?>
+
+
     
 
 <!--

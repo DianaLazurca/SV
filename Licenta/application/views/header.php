@@ -13,7 +13,7 @@
   <script type="text/javascript" src="<?php echo base_url("assets/js/angular");?>/controller.js"></script>  
 
 </head>
-<body ng-app="schoolViolence">
+<body ng-app="schoolViolence" style="background-color: whitesmoke;">
 <?php $user = $this->session->userdata('user');?>
 
 <div class="container" ng-controller="header">

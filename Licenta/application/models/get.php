@@ -18,6 +18,11 @@ class Get extends CI_Model {
 		return $this->db->get('testsotherformats')->result_array();
 	}
 
+	public function getEvaluationForLogId($id) {
+		$this->db->where('log_id', $id);
+		return $this->db->get('evaluations')->result_array();
+	}
+
 	public function getKeyForTest($id) {
 		$this->db->where('testID',$id);
 		$query = $this->db->get('passwordsfortests');

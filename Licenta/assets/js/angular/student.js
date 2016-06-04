@@ -8,7 +8,7 @@
 		$scope.isLastQuestion = false;
 		$scope.currentTest = [];
 		$scope.currentQuestion = [];
-		$scope.testLog = [];
+		$scope.testLog = {};
 		$scope.enabledQuestionsList = [];
 		$scope.questionTime = 0;
 		$scope.questionText;
@@ -92,7 +92,27 @@
 		$scope.confirmSubmission = function() {
 			var finishQuestion = new Date().getTime();				
 			$scope.addCompletedTimeToQuestion($scope.currentQuestionId, finishQuestion - $scope.questionTime);
-			console.log($scope.testLog);
+			var startTime = $scope.testLog["start-test"];
+			$scope.testLog["finish-time"] = new Date().getTime() - startTime;
+			
+			/// save log to logs folder + save it to db
+			
+			$.ajax({
+				method : "POST",
+				url : SITE + "Test/sendTestLog",
+				data  : {"testAnswers" : $scope.testLog},
+				complete : function (xhr, status) {
+					if (status === 'error' || !xhr.responseText) {
+		         	    console.log("[confirmSubmission]error while sending test log to server");
+		     		} else {
+		     			console.log(xhr.responseText);
+		     			console.log("ce am primit de la server");
+						
+			      }
+				}   
+		    	   
+			});
+			
 			$scope.isStarted = false;
 			$scope.isFinished  = true;
 			

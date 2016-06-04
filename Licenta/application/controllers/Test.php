@@ -17,8 +17,8 @@ Class Test extends CI_Controller {
 		if ($user) {
 			$this->load->model('get');
 			$data["test"] = $this->get->getTestById($id)["Location"];
-			echo $id;
-			//$this->load->view('test', $data);
+			//echo $id;
+			$this->load->view('test', $data);
 		}
 	}
 
@@ -120,6 +120,40 @@ Class Test extends CI_Controller {
 		}
 	}
 
+	public function getDataEvaluationTabByTestID() {
+		$user = $this->session->userdata('user');
+
+		if ($user) {
+			$id = $this->input->get('id');
+			
+			$this->load->model('get');
+			$result = $this->get->getAllLogsForTestId($id);
+			if (count($result) !== 0) {
+				for ($i = 0; $i < count($result); $i ++) {
+					$logID = $result[$i]["id"];
+					$this->load->model('get');
+					$evalForLog = $this->get->getEvaluationForLogId($id);
+					if (count($evalForLog ) === 0) {
+						$result[$i]["eval_date"] = "";
+						$result[$i]["eval_man"] = "-";
+						$result[$i]["eval_aut"] = "-";
+					} else {
+						for ($index = 0; $index < count($evalForLog); $index ++) {
+							if ($evalForLog[$index]['type'] === 'm') {
+								$result[$i]["eval_date"] = $evalForLog[$index]['date'];
+								$result[$i]["eval_man"] = $evalForLog[$index]['evaluation'];
+							} else {
+								$result[$i]["eval_aut"] = $evalForLog[$index]['evaluation'];
+							}
+						}
+						
+					}
+				}
+			}
+			echo json_encode($result);
+		}
+	}
+
 	public function getEvaluations() {
 
 		$user = $this->session->userdata('user');
@@ -205,10 +239,7 @@ Class Test extends CI_Controller {
 
 	public function sendTestLog() {
 		$testLog = $this->input->post();
-		
-
 		$user = $this->session->userdata('user');
-
 
     	$this->load->library('passwordgenerator');
     	$uniqueIdentifier = $this->passwordgenerator->generateUniqueTestLogIdentifier();

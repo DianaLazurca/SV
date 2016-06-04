@@ -54,8 +54,8 @@
 			</div>
 			<div ng-if="isStarted == false && isFinished == true">
 				<u><h1 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;"> Congratulations! </h1></u>
-				<h4 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;">You have finished this questionnaire in X </h4>
-				<button  class="btn btn-success btn-lg center-block" ng-click="resume()">Resume</button>
+				<h4 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;">You have finished this questionnaire in  </h4>
+				<button style="margin-bottom: 20%;" class="btn btn-success btn-lg center-block" ng-click="resume()">Resume</button>
 			</div>
 		</div>
 	</div>
