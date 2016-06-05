@@ -11,7 +11,10 @@
 		$scope.testLog = {};
 		$scope.enabledQuestionsList = [];
 		$scope.questionTime = 0;
-		$scope.questionText;
+		$scope.questionText = "";
+		$scope.currentPage = 0;
+		$scope.pagedQuestions = [];
+		$scope.itemsPerPage = 1;
 		
 		$scope.startTest = function() {
 			$scope.testID = document.getElementById("startTest").getAttribute("data-id");
@@ -90,7 +93,7 @@
 			alertButton.click();
 		};
 		$scope.confirmSubmission = function() {
-			var finishQuestion = new Date().getTime();				
+			var finishQuestion = new Date().getTime();	
 			$scope.addCompletedTimeToQuestion($scope.currentQuestionId, finishQuestion - $scope.questionTime);
 			var startTime = $scope.testLog["start-test"];
 			$scope.testLog["finish-time"] = new Date().getTime() - startTime;
@@ -115,14 +118,9 @@
 			
 			$scope.isStarted = false;
 			$scope.isFinished  = true;
+			$scope.groupToPages();
 			
 		};
-		$scope.resume = function() {			
-			var alertButton = document.getElementById("resumeModalButton");
-			var modalText = document.getElementById("resumeModalMessage");
-			//modalText.innerHTML = "Are you sure that you want to finish the test?";
-			alertButton.click();
-		}
 		$scope.addQuestionToTestLog = function(question, time) {
 			if (!$scope.checkIfQuestionAlreadyExistsInLog(question['question_id'])) {
 				var answeredQuestion = {};
@@ -154,15 +152,15 @@
 			return exists;
 		};
 	
-		$scope.pickAnswer = function (answerID) {
+		$scope.pickAnswer = function (answerID, index) {
 			if ($scope.currentQuestionId != $scope.currentTest.questions.length - 1) {
 				$scope.enabledQuestionsList[$scope.currentQuestionId + 1] = true;
 			}
 			var chosenAnswer = {};
-			if ($scope.currentQuestion.answers[answerID].isImage == true) {
-				chosenAnswer = {"answer-id" : answerID + 1, "text" : "", "img" : $scope.currentQuestion.answers[answerID].image};
+			if ($scope.currentQuestion.answers[index].isImage == true) {
+				chosenAnswer = {"answer-id" : answerID, "text" : "", "img" : $scope.currentQuestion.answers[index].image};
 			} else {
-				chosenAnswer = {"answer-id" : answerID + 1, "text" : $scope.currentQuestion.answers[answerID].text, "img" : ""};
+				chosenAnswer = {"answer-id" : answerID, "text" : $scope.currentQuestion.answers[index].text, "img" : ""};
 			}
 			var answersLength = $scope.objectLength($scope.testLog["questions"][$scope.currentQuestionId]["answers"]);
 			$scope.testLog["questions"][$scope.currentQuestionId]["answers"][answersLength] = chosenAnswer;
@@ -181,6 +179,77 @@
 			for ( var p in objectToCOuntElements ) 
 					i++;
 			return i;
+		};
+		$scope.time = function(milliseconds) {
+			var time = "";
+			var minutes = 0;
+			var hours = 0;
+			var seconds = Math.floor(milliseconds / 1000);
+			if (seconds > 60) {
+				minutes = Math.floor(seconds / 60);
+				seconds = seconds - minutes * 60;
+				if (minutes > 60) {
+					hours = Math.floor(seconds / 60);
+					minutes = minutes - hours * 60;
+				}
+			}
+			if (hours !== 0) {
+				time = hours + "h ";
+			}
+			if (minutes !== 0) {
+				time += minutes + "m ";
+			}
+			if (seconds !== 0) {
+				time += seconds + "s";
+			}
+			return time;
+		};
+		
+		$scope.setPage = function () {
+			$scope.currentPage = this.n;
+		};
+		$scope.range = function (start, end) {
+			var ret = [];
+			if (!end) {
+				end = start;
+				start = 0;
+			}
+			for (var i = start; i < end; i++) {
+				ret.push(i);
+			}
+			return ret;
+		};
+		$scope.prevPage = function () {
+			if ($scope.currentPage > 0) {
+				$scope.currentPage--;
+			}
+		};		
+		$scope.nextPage = function () {
+			if ($scope.currentPage < $scope.pagedQuestions.length - 1) {
+				$scope.currentPage++;
+			}
+		};
+		$scope.groupToPages = function () {
+			$scope.pagedQuestions = [];
+			for (var i = 0; i < $scope.currentTest["questions"].length; i++) {
+				if (i % $scope.itemsPerPage === 0) {
+					$scope.pagedQuestions[Math.floor(i / $scope.itemsPerPage)] = [ $scope.currentTest.questions[i] ];
+				} else {
+					$scope.pagedQuestions[Math.floor(i / $scope.itemsPerPage)].push($scope.currentTest.questions[i]);
+				}
+			}
+		};
+		$scope.checkIfLastAnswerChecked = function(question, answerId) {
+			for (var i = 0; i < $scope.objectLength($scope.testLog['questions']); i++) {
+				if ($scope.testLog['questions'][i]['question-id'] === question['question_id']) {
+					var answers = $scope.testLog['questions'][i]['answers'];
+					console.log(answers[objectLength(answers) - 1] + "   " + answerId);
+					if (answers[$scope.objectLength(answers) - 1]['answer-id'] === answerId) {
+						return true;
+					}
+				}
+			}
+			return false;
 		};
 		
 	}

@@ -15,6 +15,45 @@ Class Teacher extends CI_Controller {
 
 	}
 
+	public function saveClassification() {
+		$user = $this->session->userdata('user');
+		if ($user) {
+			$postData = $this->input->post('data');
+			$log_id = $postData['log_id'];
+			$this->load->model('get');
+			$result = $this->get->getEvaluationForLogId($log_id);
+			
+			
+			$date = date('Y-m-d H:i:s', time());						
+
+			if (count($result) > 0) {
+				//vezi daca trebuie update sau nimic
+				for ($index = 0; $index < count($result); $index ++) {
+					if ($result[$index]['type'] === 'm') {
+						if ($result[$index]['evaluation'] !== $postData['man']['evaluation']) {
+							$data['evaluation'] = $postData['man']['evaluation'];
+							$data['date'] = $date;
+							$this->load->model('set');
+							$this->set->updateEvaluation($log_id, $data);
+						}
+					}
+				}
+			} else {
+				// inseareaza in db 
+				if ($postData['man']['evaluation'] !== '' && $postData['man']['evaluation'] !== '-') {
+					$this->load->model('set');
+					$data['log_id'] = $log_id;
+					$data['type'] = 'm';
+					$data['date'] = $date;
+					$data['evaluation'] = $postData['man']['evaluation'];
+					$this->set->saveEvaluation($data);
+				}
+				
+			}
+			print_r($date);
+		}
+	}
+
 	public function uploadFile() {
 
 		$user = $this->session->userdata('user');

@@ -57,6 +57,16 @@ Class Set extends CI_Model{
 		    $this->db->insert('testsotherformats',$data);	
 	}
 
+	public function saveEvaluation($data) {
+		$this->db->insert('evaluations',$data);
+	}
+
+	public function updateEvaluation($log_id, $data) {
+
+		$this->db->where('log_id', $log_id);
+		$this->db->update('evaluations',$data);
+	}
+
 	public function insertLog($testID, $uniqueIdentifier, $fileName, $username, $date) {
 
 		$data = array(

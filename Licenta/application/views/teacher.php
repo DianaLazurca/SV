@@ -120,7 +120,7 @@
                             <div class="panel panel-default">
                               <div class="panel-body">
                                 <h4>{{question.question_id}}. {{question.text}}</h4>
-                                <div ng-repeat="answer in question.answers">
+                                <div style="margin-left: 20px;" ng-repeat="answer in question.answers">
                                    <li>
                                       <img style="height: 120px; width: 200px; margin-bottom: 10px;" ng-if="answer.isImage == true" src="{{answer.image}}">
                                       <span ng-if="answer.isImage == false">{{answer.text}}</span>
@@ -159,7 +159,7 @@
                                         <tr ng-repeat="evaluation in pagedEvals[currentPageEval] track by $index" style="text-align: center;" ng-click="evaluateStudent($index)">
                                           <td>{{evaluation.date}}</td> 
                                           <td>{{evaluation.username}}</td>
-                                          <td>{{evaluation.eval_man}}</td>
+                                          <td ng-attr-id="{{'manEval' + evaluation['id']}}">{{evaluation.eval_man}}</td>
                                           <td>{{evaluation.eval_aut}}</td>
                                         </tr>                                     
                                       </tbody>
@@ -167,7 +167,7 @@
                                   <h3 ng-if="evaluationArray.length == 0">No student has answered to this questionnaire!</h3>
                                 </div> 
 
-                                <div ng-if="isEvaluationTab == true">
+                                <div ng-if="evaluationArray.length != 0" ng-if="isEvaluationTab == true">
                                     <ul class="pagination pull-right">
                                         <li ng-class="{disabled: currentPageEval == 0}">
                                             <a href ng-click="prevPageEval()">« Prev</a>
@@ -225,16 +225,17 @@
         </div>
     </div>
 
-<button type="button" style="display: none;" class="btn btn-info btn-lg" id="evaluateModalButton" data-toggle="modal" data-target="#evaluateModal"></button>
+  <button type="button" style="display: none;" class="btn btn-info btn-lg" id="evaluateModalButton" data-toggle="modal" data-target="#evaluateModal"></button>
   <div id="evaluateModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <strong><h3 style="text-align: center">Evaluate {{currentLogToBeEvaluated.username}}</h3><strong>
+            <strong><h3 style="text-align: center">Evaluate {{currentLogToBeEvaluated.username}}</h3></strong>
         </div>
-        <div class="modal-body">
-            <div style="margin-left: 20px; margin-top: 20px; margin-bottom: 20px;" ng-repeat="question in pagedLogEvals[currentPageLogEval]">
+        <div class="modal-body" style="">
+            
+            <div style="margin-left: 20px; margin-top: 20px; margin-bottom: 20px; height: 300px; overflow-y: auto;" ng-repeat="question in pagedLogEvals[currentPageLogEval]">
               <h4>{{question['question-id']}}. {{question.text}} ({{time(question['answered-time'])}})</h4>
                 <div ng-repeat="answer in question.answers">
                    
@@ -245,24 +246,28 @@
                    
                 </div>
             </div>
-              <ul class="pagination" style="margin-left: 30%;">
-                  <li ng-class="{disabled: currentPageLogEval == 0}">
-                      <a href ng-click="prevPageLogEval()">« Prev</a>
-                  </li>
-                  <li ng-repeat="n in range(pagedLogEvals.length)"
-                      ng-class="{active: n == currentPageLogEval}"
-                  ng-click="setPageLogEval()">
-                      <a href ng-bind="n + 1">1</a>
-                  </li>
-                  <li ng-class="{disabled: currentPageLogEval == pagedLogEvals.length - 1}">
-                      <a href ng-click="nextPageLogEval()">Next»</a>
-                  </li>
-              </ul>
+             <ul class="pagination" style="margin-bottom: -10px; margin-left: 30%;">
+                    <li ng-class="{disabled: currentPageLogEval == 0}">
+                        <a href ng-click="prevPageLogEval()">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in range(pagedLogEvals.length)"
+                        ng-class="{active: n == currentPageLogEval}"
+                    ng-click="setPageLogEval()">
+                        <a href ng-bind="n + 1">1</a>
+                    </li>
+                    <li ng-class="{disabled: currentPageLogEval == pagedLogEvals.length - 1}">
+                        <a href ng-click="nextPageLogEval()">Next»</a>
+                    </li>
+            </ul>
         </div>
         <div class="modal-footer">
-          <div class="row">            
-            <h4 style="text-align: left;" class="col-sm-3">Time: {{time(currentLogToBeEvaluatedJSON['finish-time'])}} </h4>
-            <button type="button" style="margin-right: 20px;" class="btn btn-success" ng-click="confirmSubmission()" data-dismiss="modal">Evaluate</button>
+          <div class="row"> 
+            <aside class="col-sm-4">           
+              <h4 style="text-align: left;" >Time: {{time(currentLogToBeEvaluatedJSON['finish-time'])}} </h4>
+            </aside>
+            <aside class="col-sm-8">
+              <button type="button"  class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#confirmModalEval">Classify</button>
+            </aside>
           </div>
         </div>
       </div>
@@ -270,7 +275,53 @@
     </div>
   </div>
 
+  <div class="modal fade" id="confirmModalEval" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">              
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <strong><h3 style="text-align: center">Classify {{currentLogToBeEvaluated.username}}</h3></strong>
+          </div>
+          <div class="modal-body">
+              <ol style="margin-left: 20px;">
+                <li> <h4> Manual Classification: </h4>   
+                    <ul style="margin-left: 20px;">
+                      <form class="form-inline">
+                         <li id="listItem">
+                                <h4 ng-if="isTransfInInput == false"id="typeMan"> Type: <span ng-bind="currentLogToBeEvaluated['eval_man']"></span> <button ng-click="fromTextToInput()" class="btn btn-success">Change</button></h4>
+                                <h4 ng-if="isTransfInInput == true"id="typeMan"> Type: <input type="text" id="manClassifInput" value="{{currentLogToBeEvaluated['eval_man']}}" class="form-control"></h4>
+                          </li>
+                       </form>
+                        <li><h4> Date: {{currentLogToBeEvaluated['eval_date']}}</h4></li>
+                    </ul>             
+                </li>
+                <li> <h4> Automatic Classification: </h4>   
+                    <ul style="margin-left: 20px;">
+                        <li>
+                          <form class="form-inline">
+                          <h4> Type: {{currentLogToBeEvaluated['eval_aut']}} <button class="glyphicon glyphicon-refresh form-control" style="color:green;"></button></h4>
+                          </form>
+                        </li>
+                        <li><h4> Date: {{currentLogToBeEvaluated['eval_aut_date']}}</h4></li>
+                    </ul>             
+                </li>
+              </ol>
+              <!--<h4 > Manual Classification: <input type="text" class="form-control" value="{{currentLogToBeEvaluated['eval_man']}}"></h4>              
+              <h4 style="margin-left: 20px;"> Manual Classification date: {{currentLogToBeEvaluated['eval_date']}}</h4>
 
+              <h4 style="margin-left: 20px;"> Automatic Classification: {{currentLogToBeEvaluated['eval_aut']}}"</h4>
+              <h4 style="margin-left: 20px;"> Classification date: {{currentLogToBeEvaluated['eval_aut_date']}}</h4>-->
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="saveClassification()">Save classification</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
 
 
 

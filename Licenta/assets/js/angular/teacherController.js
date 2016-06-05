@@ -20,6 +20,9 @@
 		$scope.pagedLogEvals = [];
 		$scope.currentLogToBeEvaluated = {};
 		$scope.currentLogToBeEvaluatedJSON = {};
+		$scope.isTransfInInput = false;
+		$scope.evaluation = "";
+		
 		$scope.collapse = function() {
 			$('.collapse[id="answers"]').collapse('toggle');
 			console.log("collapse");			
@@ -153,11 +156,11 @@
 		};
 		
 		$scope.getEvals = function() {
+			
 			$http({
 				  method: 'GET',
 				  url: SITE +  'Test/getDataEvaluationTabByTestID?id=' + $scope.currentTest['test_id']
-				}).then(function successCallback(response) {
-					//console.log(response.data);					
+				}).then(function successCallback(response) {					
 					$scope.evaluationArray = response.data;
 					$scope.groupEvalsToPages();
 				}, function errorCallback(response) {
@@ -165,12 +168,15 @@
 			});
 		};
 		$scope.evaluateStudent = function(logIndex) {
+			
 			$scope.currentLogToBeEvaluated = $scope.evaluationArray[logIndex];
+			console.log("evaluateStudent");
+			console.log($scope.currentLogToBeEvaluated);
+			$scope.evaluation = $scope.currentLogToBeEvaluated['eval_man'];
 			$http({
 				  method: 'GET',
 				  url: $scope.currentLogToBeEvaluated.location
 				}).then(function successCallback(response) {
-					console.log(response.data);	
 					$scope.currentLogToBeEvaluatedJSON = response.data;
 					$scope.groupLogEvalsToPages();
 					var alertButton = document.getElementById("evaluateModalButton");
@@ -204,8 +210,61 @@
 				time += seconds + "s";
 			}
 			return time;
-		}
+		};
+		$scope.fromTextToInput = function () {
+			$scope.isTransfInInput = true;
+		};
+		
+		$scope.saveClassification = function() {
+			var log_id = $scope.currentLogToBeEvaluated['id'];
+			var classif = "";
+			if ($scope.isTransfInInput === true) {
+				classif = document.getElementById('manClassifInput').value;
+			} else {
+				classif = $scope.currentLogToBeEvaluated['eval_man'];
+			}
+				
+			var newDate = new Date();
+			var manClassif = {};
+			if (classif !== '-') {
+				manClassif = {'date' : newDate, 'evaluation' : classif};
+			} else {
+				manClassif = {'date' : newDate, 'evaluation' : ""};
+			}
+			var postData = {'log_id' : log_id, 'man' : manClassif};
+			
+			$.ajax({
+				method : "POST",
+				url : SITE + "teacher/saveClassification",
+				data  : {"data" : postData},
+				complete : function (xhr, status) {
+					if (status === 'error' || !xhr.responseText) {
+		         	    console.log("[confirmSubmission]error while sending test log to server");
+		     		} else {
+						console.log("saveClassification");
+						console.log($scope.currentLogToBeEvaluated);
+						
+						$scope.currentLogToBeEvaluated['eval_man'] = classif;	
+						$scope.currentLogToBeEvaluated['eval_date'] = xhr.responseText;
+						for (var i = 0; i < $scope.pagedEvals.length; i ++) {
+							for (var j = 0; j < $scope.pagedEvals[i].length; j++) {
+								if ($scope.pagedEvals[i]['id'] = $scope.currentLogToBeEvaluated['id']) {
+									$scope.pagedEvals[i]['eval_man'] = classif;
+									$scope.pagedEvals[i]['eval_date'] = xhr.responseText;
+								}
+							}
+						}
+						document.getElementById('manEval' + log_id).innerHTML = classif;
+						if ($scope.isTransfInInput === true) {			
+							
+							$scope.isTransfInInput = false;
+						}
+					}
+				} 		    	   
+			});
+		};
 	};
+	
 	
 	app.controller('teacher', teacherController, ['$scope', '$http']);
 })();

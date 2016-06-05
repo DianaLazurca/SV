@@ -34,6 +34,7 @@ class Get extends CI_Model {
 		return null;
 	}
 
+
 	public function getMaxTestId() {
 		$this->db->select_max('id');
 		$query = $this->db->get('tests');

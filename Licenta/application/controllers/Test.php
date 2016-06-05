@@ -132,18 +132,26 @@ Class Test extends CI_Controller {
 				for ($i = 0; $i < count($result); $i ++) {
 					$logID = $result[$i]["id"];
 					$this->load->model('get');
-					$evalForLog = $this->get->getEvaluationForLogId($id);
+					$evalForLog = $this->get->getEvaluationForLogId($logID);
 					if (count($evalForLog ) === 0) {
 						$result[$i]["eval_date"] = "";
+						$result[$i]["eval_aut_date"] = "";
 						$result[$i]["eval_man"] = "-";
 						$result[$i]["eval_aut"] = "-";
 					} else {
 						for ($index = 0; $index < count($evalForLog); $index ++) {
+
+							$result[$i]["eval_date"] = "";
+							$result[$i]["eval_aut_date"] = "";
+							$result[$i]["eval_man"] = "-";
+							$result[$i]["eval_aut"] = "-";
+							
 							if ($evalForLog[$index]['type'] === 'm') {
 								$result[$i]["eval_date"] = $evalForLog[$index]['date'];
 								$result[$i]["eval_man"] = $evalForLog[$index]['evaluation'];
 							} else {
 								$result[$i]["eval_aut"] = $evalForLog[$index]['evaluation'];
+								$result[$i]["eval_aut_date"] = $evalForLog[$index]['date'];
 							}
 						}
 						

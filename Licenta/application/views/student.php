@@ -3,7 +3,15 @@
 <?php require_once('header.php'); ?>
 <?php $user = $this->session->userdata('user'); 
 ?>
-
+<style>
+input[type="radio"] {
+	width: 50px;
+	height: 15px;
+} 
+input[type="radio"]:checked {
+	color: red;
+}
+</style>
 
 <div class="container" ng-controller="student">
 	<div class="panel panel-default" style="margin:0 auto;">
@@ -40,7 +48,7 @@
 						<h4 style="margin-left:3%; margin-right: 3%" ng-if="isStarted == true && isFinished == false" ng-bind="questionText"></h4>
 					</div>
 					<div  id="allAnswers" ng-repeat="answer in currentQuestion.answers" ng-if="isStarted == true && isFinished == false"> 
-	                      <input style="margin-left: 5%;"  name="answers" type="radio" ng-click="pickAnswer($index)" data-id="answer.answer_id" ng-model="answer.answer_id" value="answer.text">
+	                      <input style="margin-left: 5%;"  name="answers" type="radio" ng-click="pickAnswer(answer.answer_id, $index)" data-id="answer.answer_id"  value="answer.answer_id">
 	                      <span style="margin-bottom: 10px;" ng-if="answer.isImage==false">{{answer.text}}</span>
 	                      <img ng-if="answer.isImage==true" src="{{answer.image}}" style="height: 120px; width: 200px; margin-bottom: 10px;">
 	                </div>
@@ -54,8 +62,8 @@
 			</div>
 			<div ng-if="isStarted == false && isFinished == true">
 				<u><h1 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;"> Congratulations! </h1></u>
-				<h4 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;">You have finished this questionnaire in  </h4>
-				<button style="margin-bottom: 20%;" class="btn btn-success btn-lg center-block" ng-click="resume()">Resume</button>
+				<h4 ng-if="isStarted == false && isFinished == true" style="text-align : center; margin-bottom: 30px;">You have finished this questionnaire in {{time(testLog['finish-time'])}} </h4>
+				<button style="margin-bottom: 20%;" class="btn btn-success btn-lg center-block" data-toggle="modal" data-target="#resumeModal">Resume</button>
 			</div>
 		</div>
 	</div>
@@ -126,12 +134,36 @@
 	  </div>
 	</div>
 
-	<button type="button" style="display: none;" class="btn btn-info btn-lg" id="resumeModalButton" data-toggle="modal" data-target="#resumeModal"></button>
 	<div id="resumeModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
+	      <div class="modal-header">
+	      	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 style="text-align: center">Resume Questionnaire</h4>
+	      </div>
 	      <div class="modal-body">
-	        <h4 style="margin-left: 20px;" id="resumeModalMessage">aicisa va fi rezumatul chestionarului (poate fi folosita ca parte comuna pentru prof + student)</h4>
+	        <div style="margin-left: 20px; height: 400px; overflow-y: auto;" ng-repeat="question in pagedQuestions[currentPage]">
+              <h4>{{$index + 1}}. {{question.text}}</h4>
+                <div style="margin-left: 20px;" ng-repeat="answer in question.answers">
+                   <input style="margin-left: 5%;" ng-disabled="true" name="answers" type="radio" value="answer.answer.answer_id" 
+                   ng-checked="checkIfLastAnswerChecked(question, answer['answer_id'])">
+                   <span style="margin-bottom: 10px;" ng-if="answer.isImage==false">{{answer.text}}</span>
+                   <img ng-if="answer.isImage==true" src="{{answer.image}}" style="height: 120px; width: 200px; margin-left: 10px; margin-bottom: 10px;">
+                </div>
+            </div>
+             <ul class="pagination" style="margin-bottom: -10px; margin-left: 30%;">
+                    <li ng-class="{disabled: currentPage == 0}">
+                        <a href ng-click="prevPage()">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in range(pagedQuestions.length)"
+                        ng-class="{active: n == currentPage}"
+                    	ng-click="setPage()">
+                        <a href ng-bind="n + 1">1</a>
+                    </li>
+                    <li ng-class="{disabled: currentPage == pagedQuestions.length - 1}">
+                        <a href ng-click="nextPage()">Next»</a>
+                    </li>
+            </ul>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
